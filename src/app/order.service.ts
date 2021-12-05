@@ -7,7 +7,7 @@ import { catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class OrderService {
-url='http://localhost:3000/orders'
+url='http://localhost:3000/order'
   constructor(private http: HttpClient) {
    }
    order(User:User){

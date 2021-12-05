@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit {
   errorMsg=''
   ngOnInit(): void {
   }
-  public userinfo=new User('','xcai3@ualberta.ca', 566221,'default','evening', true)
+  public userinfo=new User('','xcai3@ualberta.ca',1234567890,'default','evening', true)
   validateDish(value:string){
     if(value==="default"){
       this.topicHasError=true
@@ -26,6 +26,7 @@ export class ContactComponent implements OnInit {
   onSubmit(){
     this.submitted=true;
     this._OrderService.order(this.userinfo).subscribe(data=>console.log(data),
-    error=>{this.errorMsg=error.statusText; console.log(error)}
-    )}
+     error=>{this.errorMsg=error.statusText; console.log(error)}
+     )
+  }
 }
