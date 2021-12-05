@@ -1,0 +1,41 @@
+
+nav{
+    background-image: linear-gradient(355deg, white 0%, rgb(0, 128, 107) 74%);
+    color:black;
+    display: flex;
+    padding: 0.8rem 2rem;
+    justify-content: space-between;
+    
+}
+ul{
+    list-style-type: none;
+    margin-right:10%;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}   
+
+li{
+    display:inline;
+    font-size:1.6rem;
+    margin:0 16px;
+    
+}
+.right:hover{
+    color:#820050; 
+}
+.recipe{
+    font-size:2.2rem;
+    font-weight: bold;
+    margin-left:8rem;
+}
+@media only screen and (max-width: 660px){
+nav{
+    display: block;
+}
+nav ul{
+    text-align: center;
+    justify-content: center;
+}
+}

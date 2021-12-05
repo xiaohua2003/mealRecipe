@@ -1,0 +1,12 @@
+<h2>Meal Search Application</h2>
+<div class="searchInput">
+  <input [(ngModel)]="mealName" size="40" type="text" />
+  <button (click)="getImg()">Search</button>
+</div>
+<div class='img'>
+    <img src="{{ imgUrl }}" alt="" />
+</div>
+<div class='meal' [class.visible]="display">
+    <p><span>Instructions:</span>{{instructions}}</p>
+</div>
+
