@@ -1,6 +1,9 @@
 <div class="container-fluid mb-5">
     <h2>Book Your Order</h2>
-    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="text-danger" *ngIf='errorMsg'>
+         {{errorMsg | json}}
+    </div>
+    <form *ngIf="!submitted" #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
     
         <div class="form-group">
             <label for="name">Name</label>

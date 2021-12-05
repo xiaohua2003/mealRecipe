@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../user'
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +10,9 @@ import {User} from '../user'
 export class ContactComponent implements OnInit {
   public dishes:string[]=['vegetable','meat','fruit']
   public topicHasError:boolean=true
-  constructor() {}
+  constructor(private _OrderService:OrderService) {}
+  submitted:boolean=false
+  errorMsg=''
   ngOnInit(): void {
   }
   public userinfo=new User('','xcai3@ualberta.ca', 566221,'default','evening', true)
@@ -21,6 +24,8 @@ export class ContactComponent implements OnInit {
     }
   }
   onSubmit(){
-    console.log(this.userinfo)
-  }
+    this.submitted=true;
+    this._OrderService.order(this.userinfo).subscribe(data=>console.log(data),
+    error=>{this.errorMsg=error.statusText; console.log(error)}
+    )}
 }
